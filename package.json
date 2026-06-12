@@ -1,0 +1,20 @@
+{
+  "name": "dummy-llm-api",
+  "version": "0.1.0",
+  "description": "Dummy LLM API server. Currently supports the Anthropic Messages API format, designed to be extended with OpenAI support. Streams infinite simulated responses with random thinking blocks.",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
