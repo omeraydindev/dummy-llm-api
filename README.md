@@ -40,9 +40,9 @@ Add to your VSCode `settings.json`:
 
 ### Anthropic Messages API (`POST /v1/messages`)
 
-- **Non-streaming** — returns a single response, randomly includes a `thinking` block before the `text` block.
-- **Streaming** (`stream: true`) — cycles through text blocks (2-7s each), with a ~50% chance of a thinking block between them, repeating forever. The stream never ends.
-- **Health check** — `GET /health` returns `{"status":"ok"}`.
+- **Non-streaming** - returns a single response, randomly includes a `thinking` block before the `text` block.
+- **Streaming** (`stream: true`) - cycles through text blocks (2-7s each), with a ~50% chance of a thinking block between them, repeating forever. The stream never ends.
+- **Health check** - `GET /health` returns `{"status":"ok"}`.
 
 ### Response shape
 
@@ -60,7 +60,7 @@ event: content_block_start (next block, 300ms gap)
        ... cycles forever ...
 ```
 
-No `message_delta` or `message_stop` is ever sent — the response streams indefinitely.
+No `message_delta` or `message_stop` is ever sent - the response streams indefinitely.
 
 ## Configuration
 
@@ -76,7 +76,7 @@ curl -s http://localhost:3456/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{"model":"test","max_tokens":256,"messages":[{"role":"user","content":"hi"}]}'
 
-# Streaming (infinite — Ctrl-C to stop)
+# Streaming (infinite - Ctrl-C to stop)
 curl -N http://localhost:3456/v1/messages \
   -H 'Content-Type: application/json' \
   -d '{"model":"test","max_tokens":256,"stream":true,"messages":[{"role":"user","content":"hi"}]}'

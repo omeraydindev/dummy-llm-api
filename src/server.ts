@@ -181,6 +181,6 @@ app.get('/health', (_req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Dummy Anthropic API server running on http://localhost:${PORT}`);
-  console.log(`POST /v1/messages  (streaming forever on stream=true)`);
+  console.log(`dummy-llm-api running on http://localhost:${PORT}`);
+  console.log(`POST /v1/messages (Anthropic Messages API)`);
 });
